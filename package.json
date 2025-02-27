@@ -1,0 +1,32 @@
+{
+  "name": "care",
+  "version": "1.0.0",
+  "description": "Playwright test project",
+  "scripts": {
+    "test": "playwright test",
+    "test:local": "playwright test --headed",
+    "test:ci": "xvfb-run --server-args=\"-screen 0 1920x1080x24\" playwright test --workers=1",
+    "test:debug": "playwright test --debug",
+    "show-report": "playwright show-report",
+    "install:browsers": "playwright install --with-deps",
+    "code": "playwright codegen",
+    "allure": "allure generate allure-results --clean",
+    "allures": "allure open",
+    "allure:generate": "allure generate allure-results -o allure-report --clean",
+    "allure:open": "allure open allure-report",
+    "allure:report": "npm run allure:generate && npm run allure:open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.50.1",
+    "allure-commandline": "^2.32.2",
+    "allure-playwright": "^3.2.0"
+  }
+}

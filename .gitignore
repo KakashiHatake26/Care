@@ -1,0 +1,8 @@
+*.png
+/playwright/.cache/
+/blob-report/
+/playwright-report/
+/test-results/
+node_modules/
+/allure-results/
+/allure-report/
