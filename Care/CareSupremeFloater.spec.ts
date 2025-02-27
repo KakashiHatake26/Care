@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import path from 'path';
 
-test('test', async ({ page }) => {
+test('Floater', async ({ page }) => {
   await page.goto('https://vizzainsurance.com/home');
   await page.getByRole('button', { name: 'Login' }).click();
   await page.getByRole('link', { name: '   POS Login' }).click();
