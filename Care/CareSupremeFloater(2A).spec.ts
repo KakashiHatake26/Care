@@ -47,11 +47,8 @@ test('test', async ({ page }) => {
   await page.getByRole('button', { name: 'Ok' }).click();
 
 
-  await page.getByRole('textbox', { name: 'PAN Number' }).type('itfpk1141g');
-      await page.getByRole('textbox', { name: 'DOB (DD/MM/YYYY)' }).click();
-      await page.getByRole('textbox', { name: 'DOB (DD/MM/YYYY)' }).type('02/06/2001');
-      await page.waitForTimeout(3000);
-      await page.locator('span.mat-button-wrapper:has-text("Submit")').nth(0).click();
+ 
+    
       await page.getByText('Other', { exact: true }).click();
       await page.getByLabel('Identity Proof Type').getByText('Identity Proof Type').click();
       await page.getByText('PAN', { exact: true }).click();
@@ -156,5 +153,5 @@ test('test', async ({ page }) => {
   await page.getByRole('textbox', { name: 'Enter UPI ID' }).fill('sirajabhi4-1@okaxis');
   await page.getByRole('button', { name: 'Verify' }).click();
   await page.getByRole('button', { name: 'PROCEED' }).click();
-  
+
 });
