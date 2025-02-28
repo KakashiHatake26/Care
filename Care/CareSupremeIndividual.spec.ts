@@ -102,8 +102,7 @@ test('Individual', async ({ page }) => {
   await page.locator('#cdk-accordion-child-19').getByRole('button', { name: 'Next' }).click();
   await expect(page.locator('app-religare-health-proposal')).toContainText('₹ 7768.00');
   await page.getByRole('button', { name: 'Copy Link' }).click();
+  
   await page.getByRole('button', { name: 'Pay by Customer' }).click();
-
-// await page.waitForTimeout(3000);
 
 });
