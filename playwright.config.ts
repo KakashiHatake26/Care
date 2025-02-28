@@ -4,7 +4,7 @@ export default defineConfig({
   workers: process.env.CI ? 2 : 2, // Reduce workers in CI to prevent rate limiting
   testDir: './Care', // Update test directory path
   timeout: 500000,
-  retries: process.env.CI ? 2 : 2, // More retries in CI
+  retries: process.env.CI ? 2 : 3, // More retries in CI
   snapshotDir: './snapshots',
   reporter: [
     ['list'], // Shows real-time test execution in terminal
