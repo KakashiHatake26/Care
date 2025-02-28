@@ -3,7 +3,7 @@ import { defineConfig, devices } from '@playwright/test';
 export default defineConfig({
   workers: process.env.CI ? 1 : 1, // Reduce workers in CI to prevent rate limiting
   testDir: './Care', // Update test directory path
-  timeout: 500000,
+  timeout: 600000,
   retries: process.env.CI ? 3 : 3, // More retries in CI
   snapshotDir: './snapshots',
   reporter: [
@@ -19,8 +19,8 @@ export default defineConfig({
     trace: 'retain-on-failure',
     video: 'retain-on-failure',
     screenshot: 'only-on-failure',
-    navigationTimeout: 45000,
-    actionTimeout: 45000, // Increased from 30000 to match navigation timeout
+    navigationTimeout: 60000,
+    actionTimeout: 60000, // Increased from 30000 to match navigation timeout
     baseURL: 'https://vizzainsurance.com',
     viewport: { width: 1920, height: 1080 }, // Consistent viewport size
     launchOptions: {

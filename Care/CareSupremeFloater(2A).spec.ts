@@ -46,9 +46,6 @@ test('test', async ({ page }) => {
   await page.getByRole('button', { name: '₹ 16717/Yr' }).click();
   await page.getByRole('button', { name: 'Ok' }).click();
 
-
- 
-    
       await page.getByText('Other', { exact: true }).click();
       await page.getByLabel('Identity Proof Type').getByText('Identity Proof Type').click();
       await page.getByText('PAN', { exact: true }).click();
