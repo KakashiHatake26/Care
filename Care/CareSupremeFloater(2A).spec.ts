@@ -92,7 +92,9 @@ test('test', async ({ page }) => {
   await page.locator('#mat-input-33').fill('Care');
   await page.locator('#mat-input-34').click();
   await page.locator('#mat-input-34').fill('600010');
+  await page.waitForTimeout(1000);
   await page.locator('#mat-select-value-25').getByText('City').click();
+  await page.waitForTimeout(2000);
   await page.getByText('Chennai').click();
   await page.locator('.mat-checkbox-inner-container').first().click();
   await page.locator('#mat-checkbox-16 > .mat-checkbox-layout > .mat-checkbox-inner-container').click();
