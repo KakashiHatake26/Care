@@ -14,7 +14,6 @@ test('Floater', async ({ page }) => {
   await page.waitForTimeout(1000);
   await page.locator('span.horizontal-menu-title:has-text("Online Insurance")').click();
   await page.getByRole('link', { name: 'Health Insurance', exact: true }).click();
-  await page.waitForLoadState('networkidle');
   await page.waitForTimeout(2000);
 
   const nameInput = page.getByRole('textbox', { name: 'Name' });
@@ -73,7 +72,7 @@ test('Floater', async ({ page }) => {
   await page.locator('#mat-input-33').fill('anna nagar ');
   await page.locator('#mat-input-34').fill('627005');
   await page.waitForTimeout(1000);
-  await page.locator('#mat-select-value-25').getByText('City').click();
+  await page.locator('#mat-select-value-23').getByText('City').click();
   await page.waitForTimeout(2000);
   await page.getByText('Palayamkottai').click();
   await page.locator('.mat-checkbox-inner-container').first().click();
