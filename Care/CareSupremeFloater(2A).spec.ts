@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import path from 'path';
 
-test('test', async ({ page }) => {
+test('Floater 2A', async ({ page }) => {
   await page.goto('https://vizzainsurance.com/home');
   await page.getByRole('button', { name: 'Login' }).click();
   await page.getByRole('link', { name: '   POS Login' }).click();
@@ -14,24 +14,12 @@ test('test', async ({ page }) => {
   await page.waitForTimeout(1000);
   await page.locator('span.horizontal-menu-title:has-text("Online Insurance")').click();
   await page.getByRole('link', { name: 'Health Insurance', exact: true }).click();
-  await page.waitForTimeout(2000);
+  await page.waitForTimeout(7000);
   
-  const nameInput = page.getByRole('textbox', { name: 'Name' });
-  await nameInput.waitFor({ state: 'visible', timeout: 45000 });
-  await nameInput.fill('Test');
-  
-  const emailInput = page.getByRole('textbox', { name: 'email' });
-  await emailInput.waitFor({ state: 'visible' });
-  await emailInput.fill('Free@gmail.com');
-  
-  const phoneInput = page.getByRole('textbox', { name: 'phone Number' });
-  await phoneInput.waitFor({ state: 'visible' });
-  await phoneInput.fill('8531913069');
-
-  const nextButton = page.getByRole('button', { name: 'Next' });
-  await nextButton.waitFor({ state: 'visible' });
-  await nextButton.click();
-
+  await page.getByRole('textbox', { name: 'Name' }).fill('Care Test');
+  await page.getByRole('textbox', { name: 'Email' }).fill('Care@gmail.com');
+  await page.getByRole('textbox', { name: 'Mobile Number' }).fill('8531913069');
+  await page.getByRole('button', { name: 'Next' }).click();
 
   await page.locator('#mat-input-17').fill('40');
   await page.locator('#mat-input-19').fill('40');
@@ -40,7 +28,7 @@ test('test', async ({ page }) => {
   await page.getByRole('textbox', { name: 'PIN CODE' }).type('600010');
   await page.getByRole('button', { name: 'Proceed' }).click();
   await page.waitForTimeout(2000);
-  await page.getByRole('button', { name: '₹ 16717/Yr' }).click();
+  await page.getByRole('button', { name: '₹ 16235/Yr' }).click();
   await page.getByRole('button', { name: 'Ok' }).click();
 
   await page.getByText('Other', { exact: true }).click();
@@ -143,5 +131,6 @@ test('test', async ({ page }) => {
 
   await page.getByRole('button', { name: 'Copy Link' }).click();
   
+  await page.getByRole('button', { name: 'Pay by Customer' }).click();
 
 });
